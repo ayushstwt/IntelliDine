@@ -1,0 +1,14 @@
+com\hunger\saviour\ai\controller\AiChatController.class
+com\hunger\saviour\ai\rag\RestaurantRagService.class
+com\hunger\saviour\ai\AiServiceApplication.class
+com\hunger\saviour\ai\dto\AiChatResponse.class
+com\hunger\saviour\ai\rag\RestaurantRagService$RagDocument.class
+com\hunger\saviour\ai\service\AiAssistantService.class
+com\hunger\saviour\ai\rag\RestaurantRagService$RagDocument$RagDocumentBuilder.class
+com\hunger\saviour\ai\tools\RestaurantCatalogTool$RestaurantSearchResult$RestaurantSearchResultBuilder.class
+com\hunger\saviour\ai\dto\AiChatRequest.class
+com\hunger\saviour\ai\config\AiProperties.class
+com\hunger\saviour\ai\tools\RestaurantCatalogTool$RestaurantSearchResult.class
+com\hunger\saviour\ai\dto\AiChatResponse$AiChatResponseBuilder.class
+com\hunger\saviour\ai\dto\AiChatRequest$AiChatRequestBuilder.class
+com\hunger\saviour\ai\tools\RestaurantCatalogTool.class

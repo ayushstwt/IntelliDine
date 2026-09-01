@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:${SERVER_PORT:9092}}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://${DB_HOST:dev-postgres.intellidine.local}:${DB_PORT:5435}/${DB_NAME:orders_db}}
+    username: ${DB_USERNAME:postgres_dev}
+    password: ${DB_PASSWORD:devpassword}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:dev-kafka:9092}
+
+logging:
+  level:
+    root: INFO
+    com.hunger.saviour: DEBUG

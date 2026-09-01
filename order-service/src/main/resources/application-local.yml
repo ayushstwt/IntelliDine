@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:${SERVER_PORT:9092}}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5435}/${DB_NAME:orders_db}}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgrespassword}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:19092,localhost:29092,localhost:39092}
+
+logging:
+  level:
+    root: INFO
+    com.hunger.saviour: DEBUG

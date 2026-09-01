@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:${SERVER_PORT:8761}}
+
+eureka:
+  instance:
+    hostname: ${EUREKA_HOSTNAME:prod-eureka-1}
+  client:
+    register-with-eureka: ${EUREKA_PEER_REPLICATION:true}
+    fetch-registry: ${EUREKA_PEER_REPLICATION:true}
+    service-url:
+      defaultZone: ${EUREKA_PEER_URL:http://prod-eureka-2:8761/eureka/}
+
+logging:
+  level:
+    root: WARN

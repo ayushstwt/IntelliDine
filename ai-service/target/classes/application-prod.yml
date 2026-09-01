@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:${SERVER_PORT:9093}}
+
+azure:
+  openai:
+    endpoint: ${AZURE_OPENAI_ENDPOINT}
+    api-key: ${AZURE_OPENAI_API_KEY}
+    model: ${AZURE_OPENAI_MODEL:gpt-4o}
+    deployment-name: ${AZURE_OPENAI_DEPLOYMENT_NAME:gpt-4o-prod}
+    temperature: ${AI_TEMPERATURE:0.3}
+    max-tokens: ${AI_MAX_TOKENS:2000}
+    timeout-ms: ${AI_TIMEOUT_MS:60000}
+
+logging:
+  level:
+    root: WARN
+    com.hunger.saviour: INFO

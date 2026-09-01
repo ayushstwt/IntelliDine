@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:${SERVER_PORT:8765}}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL}
+
+logging:
+  level:
+    root: WARN
+    org.springframework.cloud.gateway: ERROR

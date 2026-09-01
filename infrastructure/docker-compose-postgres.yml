@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  postgres-users:
+    image: postgres:17
+    container_name: intellidine-postgres-users
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: users_db
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespassword}
+    ports:
+      - "${USER_DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_users_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d users_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  postgres-restaurants:
+    image: postgres:17
+    container_name: intellidine-postgres-restaurants
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: restaurants_db
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespassword}
+    ports:
+      - "${RESTAURANT_DB_PORT:-5433}:5432"
+    volumes:
+      - postgres_restaurants_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d restaurants_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  postgres-payments:
+    image: postgres:17
+    container_name: intellidine-postgres-payments
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: payments_db
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespassword}
+    ports:
+      - "${PAYMENT_DB_PORT:-5434}:5432"
+    volumes:
+      - postgres_payments_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d payments_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  postgres-orders:
+    image: postgres:17
+    container_name: intellidine-postgres-orders
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: orders_db
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgrespassword}
+    ports:
+      - "${ORDER_DB_PORT:-5435}:5432"
+    volumes:
+      - postgres_orders_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d orders_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_users_data:
+  postgres_restaurants_data:
+  postgres_payments_data:
+  postgres_orders_data:

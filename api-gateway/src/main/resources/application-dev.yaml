@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:${SERVER_PORT:8765}}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://dev-eureka:8761/eureka/}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: INFO

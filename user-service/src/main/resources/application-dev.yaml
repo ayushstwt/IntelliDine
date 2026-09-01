@@ -1,0 +1,18 @@
+server:
+  port: ${PORT:${SERVER_PORT:6060}}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://${DB_HOST:dev-postgres.intellidine.local}:${DB_PORT:5432}/${DB_NAME:users_db}}
+    username: ${DB_USERNAME:postgres_dev}
+    password: ${DB_PASSWORD:devpassword}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: INFO
+    com.hunger.saviour: DEBUG
