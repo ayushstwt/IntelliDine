@@ -1,28 +1,34 @@
-# IntelliDine 🍽️🤖
+# IntelliDine
 
 > **IntelliDine** is an enterprise-grade, AI-powered food ordering and restaurant management ecosystem built on a reactive microservices architecture using Java 21 LTS, Spring Boot 3.5.0, Spring Cloud, Apache Kafka, and Azure OpenAI / Spring AI.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [Architecture Overview](#-architecture-overview)
-- [Microservices Ecosystem](#-microservices-ecosystem)
-- [Technology Stack](#-technology-stack)
-- [Multi-Environment Configuration](#-multi-environment-configuration)
-- [Prerequisites](#-prerequisites)
-- [Getting Started & Local Setup](#-getting-started--local-setup)
+- [Architecture Overview](#architecture-overview)
+- [Microservices Ecosystem](#microservices-ecosystem)
+- [Technology Stack](#technology-stack)
+- [AI Integration Architecture & Demonstration](#ai-integration-architecture--demonstration)
+  - [AI Architecture & Request Flow](#ai-architecture--request-flow)
+  - [RAG & Tool Calling Pipeline](#rag--tool-calling-pipeline)
+  - [API Demonstration: Chat & Recommendations](#api-demonstration-chat--recommendations)
+  - [Multi-Environment AI Model Strategy](#multi-environment-ai-model-strategy)
+- [Multi-Environment Configuration](#multi-environment-configuration)
+- [Prerequisites](#prerequisites)
+- [Getting Started & Local Setup](#getting-started--local-setup)
   - [1. Configure Environment Variables](#1-configure-environment-variables)
   - [2. Start Infrastructure (Databases & Kafka)](#2-start-infrastructure-databases--kafka)
   - [3. Build & Run Microservices](#3-build--run-microservices)
-- [Event-Driven Flow (Kafka)](#-event-driven-flow-kafka)
-- [Database Migrations](#-database-migrations)
-- [Security & Authentication](#-security--authentication)
-- [Project Structure](#-project-structure)
+- [Event-Driven Flow (Kafka)](#event-driven-flow-kafka)
+- [Database Migrations](#database-migrations)
+- [Security & Authentication](#security--authentication)
+- [Project Structure](#project-structure)
+- [License](#license)
 
 ---
 
-## 🏛️ Architecture Overview
+## Architecture Overview
 
 ```mermaid
 graph TD
@@ -47,7 +53,7 @@ graph TD
 
 ---
 
-## 📦 Microservices Ecosystem
+## Microservices Ecosystem
 
 | Microservice | Port | Description | Database / Store |
 |---|---|---|---|
@@ -62,7 +68,7 @@ graph TD
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Core Framework**: Java 21 LTS, Spring Boot 3.5.0, Spring Cloud 2025.0.0
 - **Service Discovery & Gateway**: Netflix Eureka, Spring Cloud Gateway (Reactive WebFlux)
@@ -74,7 +80,100 @@ graph TD
 
 ---
 
-## 🌐 Multi-Environment Configuration
+## AI Integration Architecture & Demonstration
+
+The `ai-service` provides natural language food recommendations, dietary assistance, and contextual search by integrating **Spring AI**, **Azure OpenAI**, **Retrieval-Augmented Generation (RAG)**, and **AI Tool Calling**.
+
+### AI Architecture & Request Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as User / Client
+    participant GW as API Gateway (:8765)
+    participant AI as AI Service (:9093)
+    participant RAG as RestaurantRagService
+    participant Tool as RestaurantCatalogTool
+    participant LLM as Azure OpenAI (Spring AI)
+
+    User->>GW: POST /ai/chat (JWT Bearer Token)
+    GW->>AI: Forward request (lb://ai-service/ai/chat)
+    AI->>RAG: retrieveSimilarContext(query)
+    RAG-->>AI: Matched RAG Documents (Policies, dietary guidelines, scores)
+    AI->>Tool: searchRestaurants(query)
+    Tool-->>AI: Live catalog data (Restaurants, ratings, top dishes)
+    AI->>LLM: Synthesize prompt (User query + RAG context + Tool outputs)
+    LLM-->>AI: Formatted AI recommendation & reasoning
+    AI-->>GW: AiChatResponse (reply, conversationId, sources, toolsUsed, token usage)
+    GW-->>User: Standardized ApiResponse<AiChatResponse>
+```
+
+### RAG & Tool Calling Pipeline
+
+1. **RAG Vector Search (`RestaurantRagService`)**:
+   - Queries knowledge base for platform-specific policies (e.g., 30-minute delivery guarantees, certified dietary categories like Vegan, Gluten-Free, Halal).
+   - Assigns relevance similarity scores (`score: 0.92`) to ground the model and eliminate hallucinations.
+
+2. **Function Execution / Tool Calling (`RestaurantCatalogTool`)**:
+   - Programmatically retrieves live restaurant catalog data including dish names, cuisines, customer ratings, and active restaurant partners.
+
+3. **Model Synthesis (`AiAssistantService`)**:
+   - Synthesizes user intent, RAG policy constraints, and live catalog search results into an actionable recommendation with conversation session tracking (`conversationId`).
+
+### API Demonstration: Chat & Recommendations
+
+#### Request
+
+```http
+POST http://localhost:8765/ai/chat
+Content-Type: application/json
+Authorization: Bearer <JWT_ACCESS_TOKEN>
+
+{
+  "userId": "user-101",
+  "conversationId": "conv-8832-4192",
+  "message": "Can you recommend top-rated spicy Indian dishes with fast delivery?"
+}
+```
+
+#### Response
+
+```json
+{
+  "success": true,
+  "message": "AI response generated successfully",
+  "data": {
+    "reply": "Based on IntelliDine's restaurant network, here are the top recommendations for 'Can you recommend top-rated spicy Indian dishes with fast delivery?': Spicy Symphony (Rating: 4.8). Key dishes: Hyderabadi Chicken Biryani, Paneer Butter Masala, Garlic Naan. Delivery Policy: IntelliDine guarantees 30-minute delivery from top-rated restaurants with contactless packaging.",
+    "conversationId": "conv-8832-4192",
+    "sources": [
+      "doc-faq-1",
+      "doc-policy-2"
+    ],
+    "toolsUsed": [
+      "RestaurantCatalogTool.searchRestaurants",
+      "RestaurantRagService.retrieveSimilarContext"
+    ],
+    "tokensUsed": 185,
+    "timestamp": "2026-09-02T10:15:30.124Z"
+  },
+  "path": "/ai/chat",
+  "traceId": "c4b8109d-83b6-47b2-bb79-9f7cb63a921d"
+}
+```
+
+### Multi-Environment AI Model Strategy
+
+| Parameter | Local / Dev Environment | Staging Environment | Production Environment |
+|---|---|---|---|
+| **Model** | `gpt-4o-mini` | `gpt-4o` | `gpt-4o` |
+| **Endpoint** | `https://intellidine-ai-local.openai.azure.com/` | `https://intellidine-ai-stag.openai.azure.com/` | `https://intellidine-prod.openai.azure.com/` |
+| **Temperature** | `0.7` (Creative exploration) | `0.5` | `0.3` (Deterministic & accurate) |
+| **Max Tokens** | `1000` | `1500` | `2000` |
+| **Timeout** | `30000 ms` | `45000 ms` | `60000 ms` |
+
+---
+
+## Multi-Environment Configuration
 
 IntelliDine supports 4 distinct execution environments:
 
@@ -94,7 +193,7 @@ Environment templates:
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 Ensure you have the following installed on your machine:
 - **Java 21 LTS** or later (`java -version`)
@@ -104,7 +203,7 @@ Ensure you have the following installed on your machine:
 
 ---
 
-## 🚀 Getting Started & Local Setup
+## Getting Started & Local Setup
 
 ### 1. Configure Environment Variables
 
@@ -153,11 +252,11 @@ mvn -pl ai-service spring-boot:run
 mvn -pl api-gateway spring-boot:run
 ```
 
-> **Tip:** By default, services run under the `local` profile. To run with another profile, pass `-Dspring-boot.run.profiles=<profile>` (e.g., `-Dspring-boot.run.profiles=dev`).
+> **Note:** By default, services run under the `local` profile. To run with another profile, pass `-Dspring-boot.run.profiles=<profile>` (e.g., `-Dspring-boot.run.profiles=dev`).
 
 ---
 
-## 🔄 Event-Driven Flow (Kafka)
+## Event-Driven Flow (Kafka)
 
 1. A customer places an order via the `order-service`.
 2. The payment transaction is initiated via `payment-service`.
@@ -167,7 +266,7 @@ mvn -pl api-gateway spring-boot:run
 
 ---
 
-## 🗄️ Database Migrations
+## Database Migrations
 
 Each microservice manages its own schema independently using **Flyway**:
 - `user-service`: `db/migration/V1__create_roles_table.sql`, `V2__create_users_table.sql`, `V3__add_create_at_column.sql`
@@ -177,7 +276,7 @@ Migrations run automatically upon application startup.
 
 ---
 
-## 🔐 Security & Authentication
+## Security & Authentication
 
 - Asymmetric RSA Public/Private Key authentication via Spring Security and Nimbus JOSE.
 - Public/Private keys are located under `user-service/src/main/resources/certs/` or configured via `RSA_PRIVATE_KEY` / `RSA_PUBLIC_KEY` environment variables.
@@ -185,7 +284,7 @@ Migrations run automatically upon application startup.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 IntelliDine/
@@ -205,6 +304,6 @@ IntelliDine/
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
