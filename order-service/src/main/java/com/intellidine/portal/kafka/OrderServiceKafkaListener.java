@@ -1,11 +1,11 @@
-package com.hunger.saviour.portal.kafka;
+package com.intellidine.portal.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hunger.saviour.portal.dtos.OrderDTO;
-import com.hunger.saviour.portal.entities.OrderEntity;
-import com.hunger.saviour.portal.entities.OrderStatus;
-import com.hunger.saviour.portal.services.OrderService;
+import com.intellidine.portal.dtos.OrderDTO;
+import com.intellidine.portal.entities.OrderEntity;
+import com.intellidine.portal.entities.OrderStatus;
+import com.intellidine.portal.services.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

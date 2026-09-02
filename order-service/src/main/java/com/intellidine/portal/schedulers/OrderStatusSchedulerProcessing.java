@@ -1,8 +1,8 @@
-package com.hunger.saviour.portal.schedulers;
+package com.intellidine.portal.schedulers;
 
-import com.hunger.saviour.portal.entities.OrderEntity;
-import com.hunger.saviour.portal.entities.OrderStatus;
-import com.hunger.saviour.portal.repositories.OrderRepository;
+import com.intellidine.portal.entities.OrderEntity;
+import com.intellidine.portal.entities.OrderStatus;
+import com.intellidine.portal.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;

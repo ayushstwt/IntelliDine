@@ -1,8 +1,8 @@
-package com.hunger.saviour.portal.services.impl;
+package com.intellidine.portal.services.impl;
 
-import com.hunger.saviour.portal.entities.OrderEntity;
-import com.hunger.saviour.portal.repositories.OrderRepository;
-import com.hunger.saviour.portal.services.OrderService;
+import com.intellidine.portal.entities.OrderEntity;
+import com.intellidine.portal.repositories.OrderRepository;
+import com.intellidine.portal.services.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

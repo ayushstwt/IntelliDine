@@ -1,6 +1,6 @@
-package com.hunger.saviour.portal.dtos;
+package com.intellidine.portal.dtos;
 
-import com.hunger.saviour.portal.entities.OrderStatus;
+import com.intellidine.portal.entities.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

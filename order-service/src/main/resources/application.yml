@@ -41,4 +41,4 @@ eureka:
 logging:
   level:
     root: INFO
-    com.hunger.saviour: DEBUG
+    com.intellidine: DEBUG

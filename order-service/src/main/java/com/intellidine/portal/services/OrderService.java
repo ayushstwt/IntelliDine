@@ -1,6 +1,6 @@
-package com.hunger.saviour.portal.services;
+package com.intellidine.portal.services;
 
-import com.hunger.saviour.portal.entities.OrderEntity;
+import com.intellidine.portal.entities.OrderEntity;
 
 import java.util.List;
 

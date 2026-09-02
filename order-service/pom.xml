@@ -17,7 +17,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.hunger.saviour</groupId>
+			<groupId>com.intellidine</groupId>
 			<artifactId>common-library</artifactId>
 			<version>1.0.0</version>
 		</dependency>

@@ -1,7 +1,7 @@
-package com.hunger.saviour.portal.repositories;
+package com.intellidine.portal.repositories;
 
-import com.hunger.saviour.portal.entities.OrderEntity;
-import com.hunger.saviour.portal.entities.OrderStatus;
+import com.intellidine.portal.entities.OrderEntity;
+import com.intellidine.portal.entities.OrderStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
