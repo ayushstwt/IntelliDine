@@ -1,7 +1,7 @@
-package com.hunger.saviour.common.exception;
+package com.intellidine.common.exception;
 
-import com.hunger.saviour.common.dto.ErrorResponse;
-import com.hunger.saviour.common.filter.TraceIdFilter;
+import com.intellidine.common.dto.ErrorResponse;
+import com.intellidine.common.filter.TraceIdFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;

@@ -8,7 +8,7 @@
 		<version>3.5.0</version>
 		<relativePath/>
 	</parent>
-	<groupId>com.hunger.saviour</groupId>
+	<groupId>com.intellidine</groupId>
 	<artifactId>common-library</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>

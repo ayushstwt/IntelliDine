@@ -1,4 +1,4 @@
-package com.hunger.saviour.common.exception;
+package com.intellidine.common.exception;
 
 import org.springframework.http.HttpStatus;
 

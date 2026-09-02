@@ -1,4 +1,4 @@
-package com.hunger.saviour.common.filter;
+package com.intellidine.common.filter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

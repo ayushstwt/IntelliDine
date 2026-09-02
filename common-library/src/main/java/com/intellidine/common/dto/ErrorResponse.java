@@ -1,4 +1,4 @@
-package com.hunger.saviour.common.dto;
+package com.intellidine.common.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

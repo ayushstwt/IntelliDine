@@ -1,4 +1,4 @@
-package com.hunger.saviour.common.exception;
+package com.intellidine.common.exception;
 
 public enum ErrorCode {
     VALIDATION_ERROR,
