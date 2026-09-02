@@ -1,8 +1,8 @@
-package com.hunger.saviour.portal.kafka;
+package com.intellidine.portal.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hunger.saviour.portal.dtos.OrderDTO;
+import com.intellidine.portal.dtos.OrderDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;

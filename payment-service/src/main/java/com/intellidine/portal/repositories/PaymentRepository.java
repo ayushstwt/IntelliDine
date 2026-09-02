@@ -1,6 +1,6 @@
-package com.hunger.saviour.portal.repositories;
+package com.intellidine.portal.repositories;
 
-import com.hunger.saviour.portal.entities.PaymentEntity;
+import com.intellidine.portal.entities.PaymentEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;

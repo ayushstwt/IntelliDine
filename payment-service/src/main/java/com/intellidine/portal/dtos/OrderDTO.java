@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.dtos;
+package com.intellidine.portal.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

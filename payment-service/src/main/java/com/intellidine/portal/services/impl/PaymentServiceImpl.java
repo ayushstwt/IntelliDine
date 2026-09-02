@@ -1,11 +1,11 @@
-package com.hunger.saviour.portal.services.impl;
+package com.intellidine.portal.services.impl;
 
-import com.hunger.saviour.portal.dtos.OrderDTO;
-import com.hunger.saviour.portal.entities.PaymentEntity;
-import com.hunger.saviour.portal.entities.PaymentStatus;
-import com.hunger.saviour.portal.kafka.PaymentServiceKafkaPublisher;
-import com.hunger.saviour.portal.repositories.PaymentRepository;
-import com.hunger.saviour.portal.services.PaymentService;
+import com.intellidine.portal.dtos.OrderDTO;
+import com.intellidine.portal.entities.PaymentEntity;
+import com.intellidine.portal.entities.PaymentStatus;
+import com.intellidine.portal.kafka.PaymentServiceKafkaPublisher;
+import com.intellidine.portal.repositories.PaymentRepository;
+import com.intellidine.portal.services.PaymentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

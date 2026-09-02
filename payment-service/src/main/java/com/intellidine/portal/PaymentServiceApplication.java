@@ -1,10 +1,10 @@
-package com.hunger.saviour.portal;
+package com.intellidine.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication(scanBasePackages = {"com.hunger.saviour.portal", "com.hunger.saviour.common"})
+@SpringBootApplication(scanBasePackages = {"com.intellidine.portal", "com.intellidine.common"})
 @EnableDiscoveryClient
 public class PaymentServiceApplication {
 
