@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Hunger-Saviour-Backend.iml" filepath="$PROJECT_DIR$/.idea/Hunger-Saviour-Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IntelliDine.iml" filepath="$PROJECT_DIR$/.idea/IntelliDine.iml" />
     </modules>
   </component>
 </project>
