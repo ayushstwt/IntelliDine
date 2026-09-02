@@ -1,7 +1,7 @@
-package com.hunger.saviour.portal.config.jwt;
+package com.intellidine.portal.config.jwt;
 
-import com.hunger.saviour.portal.config.services.CustomUserDetailsService;
-import com.hunger.saviour.portal.dtos.RsaKeyConfigurationProperties;
+import com.intellidine.portal.config.services.CustomUserDetailsService;
+import com.intellidine.portal.dtos.RsaKeyConfigurationProperties;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -33,7 +33,7 @@ import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 @Configuration
 @EnableMethodSecurity
 @RequiredArgsConstructor
-public class HungerSaviourSecurityConfiguration {
+public class IntelliDineSecurityConfiguration {
 
     private final RsaKeyConfigurationProperties rsaKeyConfigurationProperties;
     private final CustomUserDetailsService userDetailsService;

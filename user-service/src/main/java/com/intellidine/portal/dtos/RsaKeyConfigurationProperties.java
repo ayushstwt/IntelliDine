@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.dtos;
+package com.intellidine.portal.dtos;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -15,4 +15,4 @@ logging:
   level:
     root: INFO
     org.springframework.security: INFO
-    com.hunger.saviour: DEBUG
+    com.intellidine: DEBUG

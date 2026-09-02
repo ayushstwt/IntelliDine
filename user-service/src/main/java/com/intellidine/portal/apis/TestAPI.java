@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.apis;
+package com.intellidine.portal.apis;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

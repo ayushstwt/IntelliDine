@@ -1,12 +1,12 @@
-package com.hunger.saviour.portal.services;
+package com.intellidine.portal.services;
 
-import com.hunger.saviour.common.exception.ResourceAlreadyExistsException;
-import com.hunger.saviour.portal.dtos.RsaKeyConfigurationProperties;
-import com.hunger.saviour.portal.dtos.SignUpRequest;
-import com.hunger.saviour.portal.entities.RoleEntity;
-import com.hunger.saviour.portal.entities.UserEntity;
-import com.hunger.saviour.portal.repositories.RoleRepository;
-import com.hunger.saviour.portal.repositories.UserRepository;
+import com.intellidine.common.exception.ResourceAlreadyExistsException;
+import com.intellidine.portal.dtos.RsaKeyConfigurationProperties;
+import com.intellidine.portal.dtos.SignUpRequest;
+import com.intellidine.portal.entities.RoleEntity;
+import com.intellidine.portal.entities.UserEntity;
+import com.intellidine.portal.repositories.RoleRepository;
+import com.intellidine.portal.repositories.UserRepository;
 import com.nimbusds.jose.JWSVerifier;
 import com.nimbusds.jose.crypto.RSASSAVerifier;
 import com.nimbusds.jwt.SignedJWT;

@@ -1,6 +1,6 @@
-package com.hunger.saviour.portal.config.services;
+package com.intellidine.portal.config.services;
 
-import com.hunger.saviour.portal.repositories.UserRepository;
+import com.intellidine.portal.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -24,4 +24,4 @@ logging:
   level:
     root: WARN
     org.springframework.security: ERROR
-    com.hunger.saviour: INFO
+    com.intellidine: INFO

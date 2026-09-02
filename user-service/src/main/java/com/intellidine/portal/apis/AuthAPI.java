@@ -1,12 +1,12 @@
-package com.hunger.saviour.portal.apis;
+package com.intellidine.portal.apis;
 
-import com.hunger.saviour.common.dto.ApiResponse;
-import com.hunger.saviour.common.filter.TraceIdFilter;
-import com.hunger.saviour.portal.dtos.AuthRequest;
-import com.hunger.saviour.portal.dtos.ResponseDTO;
-import com.hunger.saviour.portal.dtos.SignUpRequest;
-import com.hunger.saviour.portal.entities.UserEntity;
-import com.hunger.saviour.portal.services.AuthenticationService;
+import com.intellidine.common.dto.ApiResponse;
+import com.intellidine.common.filter.TraceIdFilter;
+import com.intellidine.portal.dtos.AuthRequest;
+import com.intellidine.portal.dtos.ResponseDTO;
+import com.intellidine.portal.dtos.SignUpRequest;
+import com.intellidine.portal.entities.UserEntity;
+import com.intellidine.portal.services.AuthenticationService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

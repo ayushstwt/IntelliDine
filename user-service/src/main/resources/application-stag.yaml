@@ -18,4 +18,4 @@ logging:
   level:
     root: INFO
     org.springframework.security: WARN
-    com.hunger.saviour: INFO
+    com.intellidine: INFO

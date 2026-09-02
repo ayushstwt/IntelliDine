@@ -1,9 +1,9 @@
-package com.hunger.saviour.portal;
+package com.intellidine.portal;
 
-import com.hunger.saviour.portal.dtos.RsaKeyConfigurationProperties;
-import com.hunger.saviour.portal.entities.RoleEntity;
-import com.hunger.saviour.portal.entities.UserEntity;
-import com.hunger.saviour.portal.repositories.UserRepository;
+import com.intellidine.portal.dtos.RsaKeyConfigurationProperties;
+import com.intellidine.portal.entities.RoleEntity;
+import com.intellidine.portal.entities.UserEntity;
+import com.intellidine.portal.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@SpringBootApplication(scanBasePackages = {"com.hunger.saviour.portal", "com.hunger.saviour.common"})
+@SpringBootApplication(scanBasePackages = {"com.intellidine.portal", "com.intellidine.common"})
 @EnableConfigurationProperties(RsaKeyConfigurationProperties.class)
 @EnableDiscoveryClient
 public class UserServiceApplication {

@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.dtos;
+package com.intellidine.portal.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
