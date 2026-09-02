@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal;
+package com.intellidine.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
