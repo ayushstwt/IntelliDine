@@ -1,6 +1,6 @@
-# IntelliDine
+# IntelliDine — Intelligent AI-Powered Microservices Dining & Food Ordering Ecosystem Platform
 
-> **IntelliDine** is an enterprise-grade, AI-powered food ordering and restaurant management ecosystem built on a reactive microservices architecture using Java 21 LTS, Spring Boot 3.5.0, Spring Cloud, Apache Kafka, and Azure OpenAI / Spring AI.
+> **IntelliDine** (*Intelligent Dining Ecosystem*) is an enterprise-grade, AI-driven, and event-driven microservices platform built on Java 21 LTS, Spring Boot 3.5.0, Spring Cloud 2025.0.0, Apache Kafka, and Spring AI / Azure OpenAI with Retrieval-Augmented Generation (RAG) and Tool Calling capabilities.
 
 ---
 
