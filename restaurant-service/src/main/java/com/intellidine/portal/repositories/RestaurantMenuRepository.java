@@ -1,6 +1,6 @@
-package com.hunger.saviour.portal.repositories;
+package com.intellidine.portal.repositories;
 
-import com.hunger.saviour.portal.entities.RestaurantMenuEntity;
+import com.intellidine.portal.entities.RestaurantMenuEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RestaurantMenuRepository extends JpaRepository<RestaurantMenuEntity,Integer> {

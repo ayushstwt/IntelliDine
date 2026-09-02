@@ -1,7 +1,7 @@
-package com.hunger.saviour.portal.utilities;
+package com.intellidine.portal.utilities;
 
-import com.hunger.saviour.portal.dtos.RestaurantDTO;
-import com.hunger.saviour.portal.entities.RestaurantEntity;
+import com.intellidine.portal.dtos.RestaurantDTO;
+import com.intellidine.portal.entities.RestaurantEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

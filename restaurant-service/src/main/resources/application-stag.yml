@@ -17,4 +17,4 @@ spring:
 logging:
   level:
     root: INFO
-    com.hunger.saviour: INFO
+    com.intellidine: INFO

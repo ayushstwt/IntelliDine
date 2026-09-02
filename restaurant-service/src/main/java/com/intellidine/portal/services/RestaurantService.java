@@ -1,7 +1,7 @@
-package com.hunger.saviour.portal.services;
+package com.intellidine.portal.services;
 
-import com.hunger.saviour.portal.dtos.RestaurantDTO;
-import com.hunger.saviour.portal.entities.RestaurantEntity;
+import com.intellidine.portal.dtos.RestaurantDTO;
+import com.intellidine.portal.entities.RestaurantEntity;
 import org.springframework.data.domain.Page;
 
 

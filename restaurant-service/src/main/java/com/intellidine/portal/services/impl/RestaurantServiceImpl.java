@@ -1,11 +1,11 @@
-package com.hunger.saviour.portal.services.impl;
+package com.intellidine.portal.services.impl;
 
-import com.hunger.saviour.common.exception.ResourceNotFoundException;
-import com.hunger.saviour.portal.dtos.RestaurantDTO;
-import com.hunger.saviour.portal.entities.RestaurantEntity;
-import com.hunger.saviour.portal.repositories.RestaurantRepository;
-import com.hunger.saviour.portal.services.RestaurantService;
-import com.hunger.saviour.portal.utilities.RestaurantMapper;
+import com.intellidine.common.exception.ResourceNotFoundException;
+import com.intellidine.portal.dtos.RestaurantDTO;
+import com.intellidine.portal.entities.RestaurantEntity;
+import com.intellidine.portal.repositories.RestaurantRepository;
+import com.intellidine.portal.services.RestaurantService;
+import com.intellidine.portal.utilities.RestaurantMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
