@@ -1,6 +1,6 @@
-package com.hunger.saviour.portal.proxy;
+package com.intellidine.portal.proxy;
 
-import com.hunger.saviour.portal.dtos.AuthRequest;
+import com.intellidine.portal.dtos.AuthRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

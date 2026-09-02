@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.filter;
+package com.intellidine.portal.filter;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;

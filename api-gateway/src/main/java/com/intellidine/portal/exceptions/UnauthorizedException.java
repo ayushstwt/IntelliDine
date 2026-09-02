@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal.exceptions;
+package com.intellidine.portal.exceptions;
 
 public class UnauthorizedException extends RuntimeException{
     public UnauthorizedException(String message) {

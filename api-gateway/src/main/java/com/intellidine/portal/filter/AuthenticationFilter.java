@@ -1,7 +1,7 @@
-package com.hunger.saviour.portal.filter;
+package com.intellidine.portal.filter;
 
-import com.hunger.saviour.portal.exceptions.UnauthorizedException;
-import com.hunger.saviour.portal.proxy.WebFluxAuthenticationProxy;
+import com.intellidine.portal.exceptions.UnauthorizedException;
+import com.intellidine.portal.proxy.WebFluxAuthenticationProxy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;

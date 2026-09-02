@@ -1,4 +1,4 @@
-package com.hunger.saviour.portal;
+package com.intellidine.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +13,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class HungerSaviourApiGateway {
+public class IntelliDineApiGateway {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HungerSaviourApiGateway.class, args);
+		SpringApplication.run(IntelliDineApiGateway.class, args);
 	}
 
 	@Bean

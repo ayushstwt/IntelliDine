@@ -1,7 +1,7 @@
-package com.hunger.saviour.portal.handlers;
+package com.intellidine.portal.handlers;
 
-import com.hunger.saviour.portal.dtos.ResponseDTO;
-import com.hunger.saviour.portal.exceptions.UnauthorizedException;
+import com.intellidine.portal.dtos.ResponseDTO;
+import com.intellidine.portal.exceptions.UnauthorizedException;
 import jakarta.ws.rs.core.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
