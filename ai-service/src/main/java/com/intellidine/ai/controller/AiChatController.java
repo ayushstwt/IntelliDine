@@ -1,10 +1,10 @@
-package com.hunger.saviour.ai.controller;
+package com.intellidine.ai.controller;
 
-import com.hunger.saviour.ai.dto.AiChatRequest;
-import com.hunger.saviour.ai.dto.AiChatResponse;
-import com.hunger.saviour.ai.service.AiAssistantService;
-import com.hunger.saviour.common.dto.ApiResponse;
-import com.hunger.saviour.common.filter.TraceIdFilter;
+import com.intellidine.ai.dto.AiChatRequest;
+import com.intellidine.ai.dto.AiChatResponse;
+import com.intellidine.ai.service.AiAssistantService;
+import com.intellidine.common.dto.ApiResponse;
+import com.intellidine.common.filter.TraceIdFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

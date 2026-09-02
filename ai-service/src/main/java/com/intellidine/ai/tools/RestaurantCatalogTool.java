@@ -1,4 +1,4 @@
-package com.hunger.saviour.ai.tools;
+package com.intellidine.ai.tools;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

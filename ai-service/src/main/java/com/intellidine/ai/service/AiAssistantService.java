@@ -1,9 +1,9 @@
-package com.hunger.saviour.ai.service;
+package com.intellidine.ai.service;
 
-import com.hunger.saviour.ai.dto.AiChatRequest;
-import com.hunger.saviour.ai.dto.AiChatResponse;
-import com.hunger.saviour.ai.rag.RestaurantRagService;
-import com.hunger.saviour.ai.tools.RestaurantCatalogTool;
+import com.intellidine.ai.dto.AiChatRequest;
+import com.intellidine.ai.dto.AiChatResponse;
+import com.intellidine.ai.rag.RestaurantRagService;
+import com.intellidine.ai.tools.RestaurantCatalogTool;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ public class AiAssistantService {
 
     private final RestaurantCatalogTool catalogTool;
     private final RestaurantRagService ragService;
-    private final com.hunger.saviour.ai.config.AiProperties aiProperties;
+    private final com.intellidine.ai.config.AiProperties aiProperties;
 
     public AiChatResponse processChat(AiChatRequest request) {
         log.info("Processing AI chat request: user='{}', conversationId='{}' using model='{}', endpoint='{}'",

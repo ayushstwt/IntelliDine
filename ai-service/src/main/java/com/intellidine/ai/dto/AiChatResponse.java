@@ -1,4 +1,4 @@
-package com.hunger.saviour.ai.dto;
+package com.intellidine.ai.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

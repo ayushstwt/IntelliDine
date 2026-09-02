@@ -1,4 +1,4 @@
-package com.hunger.saviour.ai.rag;
+package com.intellidine.ai.rag;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.hunger.saviour.ai.config;
+package com.intellidine.ai.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -13,4 +13,4 @@ azure:
 logging:
   level:
     root: INFO
-    com.hunger.saviour.ai: DEBUG
+    com.intellidine.ai: DEBUG
